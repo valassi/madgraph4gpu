@@ -67,6 +67,11 @@ ifndef CUDA_HOME
   $(warning CUDA_HOME was not set: using "$(CUDA_HOME)")
 endif
 
+# If REQUIRE_CUDA is set but no cuda is found, stop here
+ifneq ($(origin REQUIRE_CUDA),undefined)
+  $(error No cuda installation found (set CUDA_HOME or make NVCC visible in PATH))
+endif
+
 # Set NVCC as $(CUDA_HOME)/bin/nvcc if it exists
 ifneq ($(wildcard $(CUDA_HOME)/bin/nvcc),)
   NVCC = $(CUDA_HOME)/bin/nvcc
