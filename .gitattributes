@@ -1,3 +1,5 @@
-# github linguist by default assumes documention in an "examples" directory
+# SR (Aug 2020): github linguist by default assumes documention in an "examples" directory
 examples/** -linguist-documentation
 
+# AV (Sep 2024): git-archive config (https://git-scm.com/book/en/v2/Customizing-Git-Git-Attributes)
+LAST_COMMIT export-subst
