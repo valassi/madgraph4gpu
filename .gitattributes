@@ -1,5 +1,48 @@
+# == See https://git-scm.com/book/en/v2/Customizing-Git-Git-Attributes ==
+
 # SR (Aug 2020): github linguist by default assumes documention in an "examples" directory
 examples/** -linguist-documentation
 
-# AV (Sep 2024): git-archive config (https://git-scm.com/book/en/v2/Customizing-Git-Git-Attributes)
+# AV (Sep 2024): keyword expansion in LAST commit (git-archive config)
 LAST_COMMIT export-subst
+
+# AV (Sep 2024): git-archive config - exclude all top level files/directories but LAST_COMMIT and epochX
+.gitattributes	export-ignore
+.github		export-ignore
+.gitignore	export-ignore
+.gitmodules	export-ignore
+MG5aMC		export-ignore
+README.md	export-ignore
+epoch0		export-ignore
+epoch1		export-ignore
+epoch2		export-ignore
+misc		export-ignore
+setup_daint.sh	export-ignore
+setup_raplab.sh	export-ignore
+test		export-ignore
+tools		export-ignore
+
+# AV (Sep 2024): git-archive config - exclude all directories in epochX but cudacpp
+epochX/alpaka	export-ignore
+epochX/fortran	export-ignore
+epochX/gridpack	export-ignore
+epochX/kokkos	export-ignore
+epochX/sycl	export-ignore
+
+# AV (Sep 2024): git-archive config - exclude all directories in epochX/cudacpp but CODEGEN
+epochX/cudacpp/.gitignore	export-ignore
+epochX/cudacpp/AUTHORS		export-ignore
+epochX/cudacpp/COPYING		export-ignore
+epochX/cudacpp/COPYING.LESSER	export-ignore
+epochX/cudacpp/COPYRIGHT	export-ignore
+epochX/cudacpp/GRIDPACKS	export-ignore
+epochX/cudacpp/*.mad		export-ignore
+epochX/cudacpp/*.sa		export-ignore
+epochX/cudacpp/*.sh		export-ignore
+epochX/cudacpp/*.txt		export-ignore
+epochX/cudacpp/tlau		export-ignore
+epochX/cudacpp/tmad		export-ignore
+epochX/cudacpp/tput		export-ignore
+
+# AV (Sep 2024): git-archive config - exclude all directories in epochX/cudacpp/CODEGEN but PLUGIN
+epochX/cudacpp/CODEGEN/*.sh  export-ignore
