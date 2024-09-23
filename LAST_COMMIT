@@ -1,1 +1,4 @@
-Last commit date: $Format:%cd by %aN$
+$Format:Last commit: %h
+Author:      %aN
+Date:        %cd
+%s$
